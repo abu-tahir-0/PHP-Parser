@@ -1,0 +1,12 @@
+Carriage return after a line feed
+-----
+<?php
+if (1) {@@{ "\n\r" }@@    $a = 1;
+}
+-----
+$stmts[0]->stmts[] = new Stmt\Expression(new Expr\Variable('b'));
+-----
+<?php
+if (1) {@@{ "\n\r" }@@    $a = 1;
+    $b;
+}
