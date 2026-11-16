@@ -515,6 +515,27 @@ class EmulativeTest extends LexerTest {
                 [\ord('|'), '|'],
                 [\ord('>'), '>'],
             ]],
+            ['8.4', '$a|>=$b;', [
+                [\T_VARIABLE, '$a'],
+                [\ord('|'), '|'],
+                [\T_IS_GREATER_OR_EQUAL, '>='],
+                [\T_VARIABLE, '$b'],
+                [\ord(';'), ';'],
+            ]],
+            ['8.4', '$a|>>$b;', [
+                [\T_VARIABLE, '$a'],
+                [\ord('|'), '|'],
+                [\T_SR, '>>'],
+                [\T_VARIABLE, '$b'],
+                [\ord(';'), ';'],
+            ]],
+            ['8.4', '$a|>>=$b;', [
+                [\T_VARIABLE, '$a'],
+                [\ord('|'), '|'],
+                [\T_SR_EQUAL, '>>='],
+                [\T_VARIABLE, '$b'],
+                [\ord(';'), ';'],
+            ]],
             ['8.5', '(void)', [
                 [\T_VOID_CAST, '(void)'],
             ]],
